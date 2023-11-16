@@ -2,3 +2,7 @@
 	path = poky
 	url = https://github.com/Haxrox/poky.git
 	branch = haxrox/kirkstone
+[submodule "meta-rust-bin"]
+	path = meta-rust-bin
+	url = https://github.com/Haxrox/meta-rust-bin.git
+	branch = haxrox/main
