@@ -52,26 +52,32 @@ SUMMARY = "An example kernel recipe that uses the linux-yocto and oe-core"
 inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
 
-KERNEL_BRANCH="master"
-META_BRANCH="yocto-6.5"
+KERNEL_BRANCH="haxrox/linux-6.6-rc7"
+META_BRANCH="haxrox/yocto-6.6"
 # KERNEL_BRANCH="haxrox/yocto-6.6"
 # META_BRANCH="haxrox/yocto-6.6"
 # Override SRC_URI in a copy of this recipe to point at a different source
 # tree if you do not want to build from Linus' tree.
-SRC_URI = "https://github.com/Haxrox/linux;protocol=https;nocheckout=1;branch=${KERNEL_BRANCH};name=linux                 \
-           https://github.com/Haxrox/yocto-kernel-cache.git;protocol=https;branch=${META_BRANCH};type=kmeta;destsuffix=kernel-meta;name=yocto-kernel-cache    \
+SRC_URI = "git://github.com/Haxrox/linux;protocol=https;branch=${KERNEL_BRANCH};name=machine                 \
+           git://github.com/Haxrox/yocto-kernel-cache.git;protocol=https;branch=${META_BRANCH};type=kmeta;destsuffix=kernel-meta;name=meta \
           "
+
 SRC_URI += "file://defconfig"
 
-LINUX_VERSION ?= "6.5"
+LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+
+# SRC_URI[linux.sha256sum] = "af4ba4404109797755cec54e8c8892f2b57facc98a98bf927de7479ef61ff005"
+# SRC_URI[yocto-kernel-cache.sha256sum] = "1184850db263970bf46a9cf54af47feb1f91648eb8af657989fb8b9165980f83"
+
+LINUX_VERSION ?= "6.6-rc7"
 LINUX_VERSION_EXTENSION:append = "-haxrox"
-KCONFIG_MODE="--alldefconfig"
+KCONFIG_MODE = "--alldefconfig"
 
 # Modify SRCREV to a different commit hash in a copy of this recipe to
 # build a different release of the Linux kernel.
 # tag: v4.2 64291f7db5bd8150a74ad2036f1037e6a0428df2
-SRCREV_linux="2dde18cd1d8fac735875f2e4987f11817cc0bc2c"
-SRCREV_yocto-kernel-cache="8368cc1f9d0a6f8681602a918746df3b3932bad6"
+SRCREV_machine = "05d3ef8bba77c1b5f98d941d8b2d4aeab8118ef1"
+SRCREV_meta = "525b3f188e0bfb1cdcca241db89ef265842205cd"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
