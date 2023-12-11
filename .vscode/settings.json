@@ -1,0 +1,13 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/haxrox/yocto-playground/sources/poky/bitbake/lib",
+    "/home/haxrox/yocto-playground/poky/bitbake/lib"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/haxrox/yocto-playground/sources/poky/bitbake/lib",
+    "/home/haxrox/yocto-playground/poky/bitbake/lib"
+  ],
+  "bitbake.pathToBitbakeFolder": "${workspaceFolder}/poky/bitbake",
+  "bitbake.pathToEnvScript": "${workspaceFolder}/poky/oe-init-build-env",
+  "bitbake.pathToBuildFolder": "${workspaceFolder}/poky/build"
+}
