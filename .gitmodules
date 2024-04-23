@@ -6,3 +6,15 @@
 	path = meta-rust-bin
 	url = https://github.com/Haxrox/meta-rust-bin.git
 	branch = haxrox/main
+[submodule "meta-intel-fpga"]
+	path = meta-intel-fpga
+	url = https://github.com/Haxrox/meta-intel-fpga.git
+	branch = haxrox/kirkstone
+[submodule "meta-intel-fpga-refdes"]
+	path = meta-intel-fpga-refdes
+	url = https://github.com/Haxrox/meta-intel-fpga-refdes.git
+	branch = haxrox/kirkstone
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = https://github.com/Haxrox/meta-openembedded.git
+	branch = haxrox/kirkstone
